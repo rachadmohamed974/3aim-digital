@@ -56,6 +56,17 @@ form input,form select,form textarea{font:inherit;padding:11px 12px;border:1px s
 .ok-box{background:#E8F7EE;border:1px solid #bfe5cc;color:#14532D;border-radius:12px;padding:14px;font-size:14px;display:none}
 footer{background:var(--navy);color:#C9D2E3;font-size:13px;padding:26px 0;margin-top:30px}footer a{color:#fff}
 .note{font-size:12.5px;color:var(--mut)}
+.demo-band{display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap;background:linear-gradient(120deg,#FFF1E6,#fff);border:1px solid #F5C9A3;border-radius:16px;padding:18px 20px;margin:18px 0}
+.demo-band b{font-size:17px}.demo-band p{margin:4px 0 0;color:var(--mut);font-size:14px}
+.wa-float{position:fixed;right:18px;bottom:18px;z-index:40;display:flex;align-items:center;gap:8px;background:#25D366;color:#fff;text-decoration:none;border-radius:999px;padding:12px 16px;font-weight:500;box-shadow:0 8px 24px rgba(0,0,0,.22)}
+.wa-float svg{width:22px;height:22px;fill:#fff}@media(max-width:600px){.wa-float span{display:none}.wa-float{padding:13px}}
+.site-ex a{font-weight:500;color:var(--navy2);word-break:break-all}
+.site-ex a.site-card{word-break:normal;font-weight:400;color:inherit}
+.site-card{text-decoration:none;color:inherit;transition:transform .15s,box-shadow .15s}.site-card:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(18,33,63,.12);border-color:#F5C9A3}
+.site-shot .bar{align-items:center}.site-shot .bar span{font-size:11px;color:var(--mut);margin-left:8px;background:#fff;border-radius:6px;padding:1px 8px}
+.site-shot img{width:100%;display:block;aspect-ratio:16/10;object-fit:cover;object-position:top}
+.site-card .go{font-size:14px;font-weight:500;color:var(--or)}
+.legal h3{margin:20px 0 6px;font-size:17px}.legal p,.legal li{color:var(--mut);font-size:14.5px}
 #g-formation,#g-compta,#g-registre{grid-template-columns:repeat(auto-fit,minmax(min(440px,100%),1fr))}
 </style>
 </head>
@@ -64,7 +75,7 @@ footer{background:var(--navy);color:#C9D2E3;font-size:13px;padding:26px 0;margin
   <a class="logo" href="#accueil"><b>3AIM</b> DIGITAL</a>
   <button class="burger" type="button" aria-label="Ouvrir le menu" onclick="document.querySelector('.menu').classList.toggle('open')">☰</button>
   <nav class="menu" aria-label="Menu">
-    <a href="#accueil">Accueil</a><a href="#formation">Centre de formation</a><a href="#compta">Comptabilité</a><a href="#registre">Registre de sécurité</a><a href="#sites">Sites internet</a><a href="#prix">Prix</a><a href="#contact">Contact</a>
+    <a href="#accueil">Accueil</a><a href="#formation">Centre de formation</a><a href="#compta">Comptabilité</a><a href="#registre">Registre de sécurité</a><a href="#sites">Sites internet</a><a href="#prix">Prix</a><a href="#essai">▶ Essayer</a><a href="#contact">Contact</a>
   </nav>
 </div></header>
 
@@ -76,10 +87,10 @@ footer{background:var(--navy);color:#C9D2E3;font-size:13px;padding:26px 0;margin
     <div class="k">Fait à La Réunion · pour les TPE et PME</div>
     <h1>Vos devis, factures, formations et sécurité réunis dans des outils simples</h1>
     <p>Des outils que j'utilise tous les jours dans mes propres entreprises (centre de formation, contrôles de sécurité). Vous voyez les vrais écrans avant de choisir, et on part de votre façon de travailler.</p>
-    <div class="row"><a class="btn" href="#contact">Demander une démonstration</a><a class="btn line" href="#formation">Voir les outils</a></div>
+    <div class="row"><a class="btn" href="#essai">▶ Essayer la démo en ligne</a><a class="btn line" href="#contact">Demander une démonstration</a><a class="btn line" href="#formation">Voir les outils</a></div>
   </div>
   <div class="grid">
-    <div class="card"><div class="ico">🎓</div><h3>Gestion de centre de formation</h3><p>Sessions, devis, factures, certificats, Qualiopi, traçabilité, espaces stagiaires, formateurs et collaborateurs.</p><span class="pill">Démo vidéo</span><a class="more" href="#formation" style="margin-top:10px">Voir les écrans →</a></div>
+    <div class="card"><div class="ico">🎓</div><h3>Gestion de centre de formation</h3><p>Sessions, devis, factures, certificats, Qualiopi, traçabilité, espaces stagiaires, formateurs et collaborateurs.</p><span class="pill">Démo en ligne</span><a class="more" href="#formation" style="margin-top:10px">Voir les écrans →</a><a class="more" href="#essai" style="margin-top:4px">▶ Essayer l'outil →</a></div>
     <div class="card"><div class="ico">🧮</div><h3>Comptabilité</h3><p>Banque reliée, rapprochement, comptes clients et fournisseurs, dossier pour l'expert-comptable.</p><span class="pill">Captures</span><a class="more" href="#compta" style="margin-top:10px">Voir les écrans →</a></div>
     <div class="card"><div class="ico">🛡️</div><h3>Registre de sécurité</h3><p>DUERP, vérifications VGP et EPI, rapports, alertes d'échéance.</p><span class="pill">Captures</span><a class="more" href="#registre" style="margin-top:10px">Voir les écrans →</a></div>
     <div class="card"><div class="ico">🌐</div><h3>Sites internet</h3><p>Site vitrine à votre image, relié à vos outils (demandes de devis, calendrier).</p><span class="pill">À partir de 990 €</span><a class="more" href="#sites" style="margin-top:10px">En savoir plus →</a></div>
@@ -98,10 +109,11 @@ footer{background:var(--navy);color:#C9D2E3;font-size:13px;padding:26px 0;margin
 <section id="formation">
   <h2>Gestion de centre de formation</h2>
   <p class="sub">Tout le parcours, de la demande de devis au certificat de réalisation, avec les preuves Qualiopi rangées au fil de l'eau. Ce sont de vraies captures de l'outil (noms et montants modifiés) : cliquez sur une capture pour l'agrandir.</p>
+  <div class="demo-band"><div><b>▶ Essayez l'outil vous-même</b><p>Une vraie copie de l'outil avec des données fictives : cliquez partout, rien n'est envoyé. Accès gratuit pendant 48 h.</p></div><div class="row"><a class="btn" href="#essai">Demander mon accès</a><a class="btn line2" href="https://demo.3aim.fr" target="_blank" rel="noopener">J'ai déjà un code</a></div></div>
   <div class="video"><div class="play">▶</div><div><b>Vidéo de démonstration</b><br>Créer une session, faire le devis et la facture en quelques clics (bientôt en ligne)</div></div>
   <h2 style="font-size:20px">Les écrans</h2>
   <div class="grid" id="g-formation"></div>
-  <div class="row" style="margin-top:22px"><a class="btn" href="#contact">Voir l'outil en démonstration</a></div>
+  <div class="row" style="margin-top:22px"><a class="btn" href="#essai">▶ Essayer la démo en ligne</a><a class="btn line2" href="#contact">Demander une démonstration</a></div>
 </section>
 
 <!-- ========== COMPTA ========== -->
@@ -130,6 +142,13 @@ footer{background:var(--navy);color:#C9D2E3;font-size:13px;padding:26px 0;margin
     <div class="card feat"><div class="ico">📅</div><h3>Calendrier en ligne</h3><p>Vos prochaines dates (formations, rendez-vous) affichées toutes seules.</p></div>
     <div class="card feat"><div class="ico">🔒</div><h3>Votre nom de domaine</h3><p>Une adresse à votre nom (votreentreprise.fr), avec sécurité HTTPS.</p></div>
   </div>
+  <h2>Quelques sites réalisés</h2><p class="sub">Des sites que j'ai faits pour mes propres entreprises, en ligne et utilisés tous les jours.</p>
+  <div class="grid site-ex">
+    <a class="card feat site-card" href="https://3aim.fr" target="_blank" rel="noopener" title="Ouvrir 3aim.fr dans un nouvel onglet"><div class="shot site-shot"><div class="bar"><i></i><i></i><i></i><span>3aim.fr</span></div><img src="captures/site-3aim.jpg" alt="Page d'accueil du site 3aim.fr" loading="lazy"></div><h3>Centre de formation</h3><p>Catalogue des formations, calendrier des sessions mis à jour tout seul, demandes de devis et réclamations reliées à l'outil de gestion.</p><span class="go">Voir le site 3aim.fr ↗</span></a>
+    <a class="card feat site-card" href="https://controle.3aim.fr" target="_blank" rel="noopener" title="Ouvrir controle.3aim.fr dans un nouvel onglet"><div class="shot site-shot"><div class="bar"><i></i><i></i><i></i><span>controle.3aim.fr</span></div><img src="captures/site-controle.jpg" alt="Page d'accueil du site controle.3aim.fr" loading="lazy"></div><h3>Contrôles de sécurité</h3><p>Présentation des vérifications VGP et EPI, du DUERP et du registre de sécurité, avec demande de devis.</p><span class="go">Voir le site controle.3aim.fr ↗</span></a>
+    <div class="card feat"><div class="ico">🏫</div><h3>Deuxième organisme de formation</h3><p>Un site simple et clair pour un organisme spécialisé (secourisme, prévention, réseaux).</p><a href="https://runixo.3aim.fr" target="_blank" rel="noopener">runixo.3aim.fr ↗</a></div>
+    <div class="card feat"><div class="ico">💻</div><h3>Ce site</h3><p>Le site de 3AIM DIGITAL, avec sa démo en ligne protégée par code d'accès.</p><a href="https://demo.3aim.fr" target="_blank" rel="noopener">demo.3aim.fr ↗</a></div>
+  </div>
   <div class="price star" style="margin-top:16px;max-width:420px"><div class="note">Site vitrine</div><div class="v">à partir de 990 €</div><ul><li>Pages à votre image</li><li>Formulaire de contact</li><li>Mise en ligne sur votre adresse</li></ul></div>
   <div class="row" style="margin-top:22px"><a class="btn" href="#contact">Demander un devis</a></div>
 </section>
@@ -145,6 +164,49 @@ footer{background:var(--navy);color:#C9D2E3;font-size:13px;padding:26px 0;margin
   <div class="row" style="margin-top:22px"><a class="btn" href="#contact">Demander une démonstration</a></div>
 </section>
 
+<!-- ========== ESSAYER LA DÉMO ========== -->
+<section id="essai">
+  <h2>Essayer l'outil de gestion de centre de formation</h2>
+  <p class="sub">Une vraie copie de l'outil, avec un centre, des entreprises et des stagiaires fictifs. Vous cliquez partout, vous créez, vous modifiez : rien n'est envoyé et rien ne sort de votre navigateur.</p>
+  <div class="grid" style="align-items:start">
+    <form id="fd" class="card" novalidate>
+      <h3 style="margin-top:0">Recevoir mon code d'accès (48 h, gratuit)</h3>
+      <div class="f"><label for="dnom">Nom et prénom</label><input id="dnom" autocomplete="name" placeholder="Marie Payet"></div>
+      <div class="f"><label for="dent">Organisme ou entreprise</label><input id="dent" autocomplete="organization" placeholder="Centre de formation…"></div>
+      <div class="f"><label for="dtel">Téléphone</label><input id="dtel" type="tel" autocomplete="tel" placeholder="0692 00 00 00"></div>
+      <div class="f"><label for="dmail">E-mail</label><input id="dmail" type="email" autocomplete="email" placeholder="marie@exemple.re"></div>
+      <div class="err" id="derr" role="alert"></div>
+      <button class="btn" type="submit">Demander mon accès</button>
+      <div class="ok-box" id="dok" style="margin-top:12px"></div>
+    </form>
+    <div class="card"><h3 style="margin-top:0">Ce que vous pourrez essayer</h3>
+      <ul style="color:var(--mut);font-size:14px;padding-left:18px;margin:0 0 12px"><li>Sessions, devis, conventions, factures et certificats</li><li>Promotions longues et apprentissage, calendriers d'alternance</li><li>Formateurs, contrats, entreprises, programmes</li><li>Qualiopi, pilotage et comptabilité analytique</li></ul>
+      <p class="note">Vous avez déjà votre code ?</p><a class="btn line2" href="https://demo.3aim.fr" target="_blank" rel="noopener">Ouvrir la démo ↗</a>
+      <p class="note" style="margin-top:12px">Ou écrivez-moi directement sur WhatsApp au <a href="https://wa.me/262692098592?text=Bonjour%2C%20je%20souhaite%20un%20acc%C3%A8s%20%C3%A0%20la%20d%C3%A9mo%203AIM%20DIGITAL" target="_blank" rel="noopener">0692 09 85 92</a>.</p></div>
+  </div>
+</section>
+
+<!-- ========== MENTIONS LÉGALES ET RGPD ========== -->
+<section id="mentions" class="legal">
+  <h2>Mentions légales et confidentialité</h2>
+  <h3>Éditeur du site</h3>
+  <p><span id="ml-soc"></span><br>Siège : <span id="ml-siege"></span><br>Directeur de la publication : <span id="ml-dir"></span><br>Contact : <a class="ml-mail" href="#"></a> · 0692 09 85 92</p>
+  <h3>Hébergement</h3>
+  <p>GitHub, Inc. (GitHub Pages), 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis.</p>
+  <h3>Propriété intellectuelle</h3>
+  <p>Les textes, captures d'écran et outils présentés sur ce site sont la propriété de l'éditeur. Toute reproduction sans autorisation est interdite. Les captures et la démonstration contiennent uniquement des données fictives.</p>
+  <h3>Données personnelles (RGPD)</h3>
+  <ul>
+    <li><b>Ce que nous recueillons :</b> uniquement ce que vous nous envoyez (nom, entreprise, téléphone, e-mail, message) pour une demande de démonstration, d'accès à la démo ou de devis.</li>
+    <li><b>Pourquoi :</b> vous répondre et vous recontacter au sujet de votre demande. Base légale : mesures précontractuelles prises à votre demande.</li>
+    <li><b>Durée de conservation :</b> 3 ans après notre dernier échange, puis suppression.</li>
+    <li><b>Destinataires :</b> l'éditeur seulement. Vos données ne sont ni vendues ni cédées.</li>
+    <li><b>Démonstration en ligne :</b> nous notons le code utilisé et la date de connexion. Ce que vous saisissez dans la démo reste dans votre navigateur et n'est jamais envoyé.</li>
+    <li><b>Cookies :</b> ce site n'utilise pas de cookies publicitaires ni d'outil de mesure d'audience.</li>
+    <li><b>Vos droits :</b> accès, rectification, effacement, opposition et limitation, en écrivant à <a class="ml-mail" href="#"></a>. Vous pouvez aussi saisir la CNIL (www.cnil.fr).</li>
+  </ul>
+</section>
+
 <!-- ========== CONTACT ========== -->
 <section id="contact">
   <h2>Demander une démonstration</h2>
@@ -155,22 +217,25 @@ footer{background:var(--navy);color:#C9D2E3;font-size:13px;padding:26px 0;margin
       <div class="f"><label for="ent">Entreprise</label><input id="ent" autocomplete="organization" placeholder="SARL Exemple"></div>
       <div class="f"><label for="tel">Téléphone</label><input id="tel" type="tel" autocomplete="tel" placeholder="0692 00 00 00"></div>
       <div class="f"><label for="mail">E-mail</label><input id="mail" type="email" autocomplete="email" placeholder="marie@exemple.re"></div>
-      <div class="f"><label for="quoi">Ce qui vous intéresse</label><select id="quoi"><option>CRM devis et facturation (gratuit)</option><option>Gestion de centre de formation</option><option>Comptabilité</option><option>Registre de sécurité</option><option>Site internet</option><option>Autre / je ne sais pas encore</option></select></div>
+      <div class="f"><label for="quoi">Ce qui vous intéresse</label><select id="quoi"><option>Accès à la démo en ligne</option><option>CRM devis et facturation (gratuit)</option><option>Gestion de centre de formation</option><option>Comptabilité</option><option>Registre de sécurité</option><option>Site internet</option><option>Autre / je ne sais pas encore</option></select></div>
       <div class="f"><label for="msg">Votre message</label><textarea id="msg" rows="4" placeholder="Votre activité, votre besoin…"></textarea></div>
       <div class="err" id="err" role="alert"></div>
       <button class="btn" type="submit">Envoyer ma demande</button>
       <div class="ok-box" id="okb" style="margin-top:12px"></div>
     </form>
-    <div class="card"><h3>Me joindre directement</h3><p>📞 <a href="tel:+262692098592">0692 09 85 92</a><br>✉️ <a id="mailto-txt" href="mailto:contact@3aim.fr">contact@3aim.fr</a><br>📍 Saint-André, La Réunion</p><p class="note">3AIM DIGITAL est une activité de 3AIM, Saint-André.</p></div>
+    <div class="card"><h3>Me joindre directement</h3><p>📞 <a href="tel:+262692098592">0692 09 85 92</a><br>✉️ <a id="mailto-txt" href="mailto:contact@3aim.fr">contact@3aim.fr</a><br>📍 Saint-André, La Réunion</p><p class="note">3AIM DIGITAL est une activité de <span class="ml-short"></span>, Saint-André.</p></div>
   </div>
 </section>
 
 </main>
-<footer><div class="wrap row" style="justify-content:space-between"><span><b style="color:var(--or)">3AIM</b> DIGITAL · Saint-André, La Réunion</span><span><a href="#contact">Contact</a> · 0692 09 85 92</span></div></footer>
+<footer><div class="wrap row" style="justify-content:space-between"><span><b style="color:var(--or)">3AIM</b> DIGITAL · Saint-André, La Réunion</span><span><a href="#essai">Essayer la démo</a> · <a href="#contact">Contact</a> · <a href="#mentions">Mentions légales et RGPD</a> · 0692 09 85 92</span></div></footer>
+<a class="wa-float" href="https://wa.me/262692098592?text=Bonjour%2C%20je%20vous%20contacte%20depuis%20digital.3aim.fr" target="_blank" rel="noopener" aria-label="Écrire sur WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.7a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.6-.3z"/></svg><span>WhatsApp</span></a>
 
 <script>
 /* ====== RÉGLAGES (à changer ici seulement) ====== */
 var EMAIL_DEMANDES = "contact@3aim.fr"; // plus tard : digital@3aim.fr
+/* société qui vend (mentions légales) : à changer ici si 3AIM DIGITAL devient une société */
+var SOCIETE = { nom: "3 AIM", forme: "SAS à associé unique", rcs: "RCS Saint-Denis de La Réunion 934 184 177", siege: "109 Lotissement Les Lilas, 97440 Saint-André, La Réunion", directeur: "Rachad MOHAMED" };
 
 /* ====== écrans montrés (remplacer « img » par le nom de la capture quand elle est prête, ex. "captures/formation-gestion.png") ====== */
 var ECRANS = {
@@ -208,7 +273,7 @@ Object.keys(ECRANS).forEach(function(k){var g=document.getElementById("g-"+k);if
   g.innerHTML=ECRANS[k].map(function(e){return '<div class="card feat">'+shot(e[0],e[2])+'<h3>'+e[0]+'</h3><p>'+e[1]+'</p></div>'}).join("")});
 
 /* ====== pages (navigation par #) ====== */
-var PAGES=["accueil","formation","compta","registre","sites","prix","contact"];
+var PAGES=["accueil","formation","compta","registre","sites","prix","essai","mentions","contact"];
 function go(){var h=(location.hash||"#accueil").slice(1);if(PAGES.indexOf(h)<0)h="accueil";
   PAGES.forEach(function(p){document.getElementById(p).classList.toggle("on",p===h)});
   document.querySelectorAll(".menu a").forEach(function(a){a.classList.toggle("on",a.getAttribute("href")==="#"+h)});
@@ -229,6 +294,24 @@ document.getElementById("f").addEventListener("submit",function(e){e.preventDefa
   ok.innerHTML="Votre messagerie s'ouvre avec la demande prête : il ne reste qu'à l'envoyer. Si rien ne s'ouvre, écrivez à <b>"+EMAIL_DEMANDES+"</b> ou appelez le <b>0692 09 85 92</b>.";
   location.href="mailto:"+EMAIL_DEMANDES+"?subject="+encodeURIComponent(sujet)+"&body="+encodeURIComponent(corps)});
 document.querySelectorAll("#f input,#f textarea").forEach(function(i){i.addEventListener("input",function(){document.getElementById("err").textContent=""})});
+/* ====== mentions légales ====== */
+document.getElementById("ml-soc").textContent=SOCIETE.nom+" ("+SOCIETE.forme+"), "+SOCIETE.rcs+" – nom commercial : 3AIM DIGITAL";
+document.getElementById("ml-siege").textContent=SOCIETE.siege;document.getElementById("ml-dir").textContent=SOCIETE.directeur;
+document.querySelectorAll(".ml-mail").forEach(function(a){a.textContent=EMAIL_DEMANDES;a.href="mailto:"+EMAIL_DEMANDES});
+document.querySelectorAll(".ml-short").forEach(function(a){a.textContent=SOCIETE.nom});
+/* ====== demande d'accès à la démo : prépare le mail ====== */
+document.getElementById("fd").addEventListener("submit",function(e){e.preventDefault();
+  var v=function(id){return document.getElementById(id).value.trim()},err=document.getElementById("derr");
+  if(!v("dnom")){err.textContent="Indiquez votre nom.";return}
+  if(!v("dtel")&&!v("dmail")){err.textContent="Indiquez un téléphone ou un e-mail pour recevoir votre code.";return}
+  if(v("dmail")&&!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v("dmail"))){err.textContent="L'adresse e-mail ne semble pas complète.";return}
+  err.textContent="";
+  var sujet="Demande d'accès à la démo 3AIM DIGITAL – "+v("dnom")+(v("dent")?" – "+v("dent"):"");
+  var corps="Nom : "+v("dnom")+"\nOrganisme / entreprise : "+v("dent")+"\nTéléphone : "+v("dtel")+"\nE-mail : "+v("dmail")+"\n\nJe souhaite recevoir un code d'accès à la démo en ligne.";
+  var ok=document.getElementById("dok");ok.style.display="block";
+  ok.innerHTML="Votre messagerie s'ouvre avec la demande prête : il ne reste qu'à l'envoyer. Vous recevrez votre code rapidement. Si rien ne s'ouvre, écrivez à <b>"+EMAIL_DEMANDES+"</b> ou sur WhatsApp au <b>0692 09 85 92</b>.";
+  location.href="mailto:"+EMAIL_DEMANDES+"?subject="+encodeURIComponent(sujet)+"&body="+encodeURIComponent(corps)});
+document.querySelectorAll("#fd input").forEach(function(i){i.addEventListener("input",function(){document.getElementById("derr").textContent=""})});
 /* ====== capture en grand ====== */
 var zb=document.createElement("div");zb.id="zoom";zb.style.cssText="display:none;position:fixed;inset:0;background:rgba(10,15,30,.88);z-index:50;align-items:center;justify-content:center;padding:16px;cursor:zoom-out";
 zb.innerHTML='<img alt="" style="max-width:100%;max-height:100%;border-radius:10px;box-shadow:0 10px 40px rgba(0,0,0,.4)">';document.body.appendChild(zb);
