@@ -56,6 +56,7 @@ form input,form select,form textarea{font:inherit;padding:11px 12px;border:1px s
 .ok-box{background:#E8F7EE;border:1px solid #bfe5cc;color:#14532D;border-radius:12px;padding:14px;font-size:14px;display:none}
 footer{background:var(--navy);color:#C9D2E3;font-size:13px;padding:26px 0;margin-top:30px}footer a{color:#fff}
 .note{font-size:12.5px;color:var(--mut)}
+#g-formation,#g-compta,#g-registre{grid-template-columns:repeat(auto-fit,minmax(min(440px,100%),1fr))}
 </style>
 </head>
 <body>
@@ -96,7 +97,7 @@ footer{background:var(--navy);color:#C9D2E3;font-size:13px;padding:26px 0;margin
 <!-- ========== CENTRE DE FORMATION ========== -->
 <section id="formation">
   <h2>Gestion de centre de formation</h2>
-  <p class="sub">Tout le parcours, de la demande de devis au certificat de réalisation, avec les preuves Qualiopi rangées au fil de l'eau.</p>
+  <p class="sub">Tout le parcours, de la demande de devis au certificat de réalisation, avec les preuves Qualiopi rangées au fil de l'eau. Ce sont de vraies captures de l'outil (noms et montants modifiés) : cliquez sur une capture pour l'agrandir.</p>
   <div class="video"><div class="play">▶</div><div><b>Vidéo de démonstration</b><br>Créer une session, faire le devis et la facture en quelques clics (bientôt en ligne)</div></div>
   <h2 style="font-size:20px">Les écrans</h2>
   <div class="grid" id="g-formation"></div>
@@ -106,7 +107,7 @@ footer{background:var(--navy);color:#C9D2E3;font-size:13px;padding:26px 0;margin
 <!-- ========== COMPTA ========== -->
 <section id="compta">
   <h2>Comptabilité</h2>
-  <p class="sub">Une comptabilité tenue au fil de l'eau, reliée à votre banque, pour ne plus tout faire à la dernière minute.</p>
+  <p class="sub">Une comptabilité tenue au fil de l'eau, reliée à votre banque, pour ne plus tout faire à la dernière minute. Vraies captures de l'outil (montants modifiés) : cliquez pour agrandir.</p>
   <div class="grid" id="g-compta"></div>
   <div class="row" style="margin-top:22px"><a class="btn" href="#contact">Demander une démonstration</a></div>
 </section>
@@ -114,7 +115,7 @@ footer{background:var(--navy);color:#C9D2E3;font-size:13px;padding:26px 0;margin
 <!-- ========== REGISTRE ========== -->
 <section id="registre">
   <h2>Registre de sécurité</h2>
-  <p class="sub">Vos obligations de sécurité au même endroit : document unique, vérifications périodiques, rapports et rappels.</p>
+  <p class="sub">Vos obligations de sécurité au même endroit : document unique, vérifications périodiques, rapports et rappels. Vraies captures de l'outil (noms modifiés) : cliquez pour agrandir.</p>
   <div class="grid" id="g-registre"></div>
   <div class="row" style="margin-top:22px"><a class="btn" href="#contact">Demander une démonstration</a></div>
 </section>
@@ -174,29 +175,34 @@ var EMAIL_DEMANDES = "contact@3aim.fr"; // plus tard : digital@3aim.fr
 /* ====== écrans montrés (remplacer « img » par le nom de la capture quand elle est prête, ex. "captures/formation-gestion.png") ====== */
 var ECRANS = {
   formation: [
-    ["Gestion des sessions","Toutes vos sessions, inter-entreprises comprises : stagiaires, formateur, devis, facture et certificats sur une seule fiche."],
-    ["Devis et factures","Le devis se fait depuis la session, la facture reprend l'accord de l'OPCO, le reste à charge part à l'entreprise."],
-    ["Espace en ligne stagiaires","Chaque stagiaire signe ses émargements, répond aux questionnaires et retrouve ses documents."],
-    ["Espace formateur","Le formateur voit son planning et ses contrats, dépose ses supports : son journal se remplit tout seul."],
-    ["Espace collaborateur","Vos collaborateurs travaillent sur les dossiers qui les concernent, avec leurs propres accès."],
-    ["Gestion des espaces","Ouvrir un accès, voir qui s'est connecté, mettre un espace en maintenance : tout depuis une page."],
-    ["Qualiopi","Les 32 indicateurs, avec les preuves rangées automatiquement au fil des sessions. Prêt pour l'audit."],
-    ["Traçabilité","Tout ce qui a été émis, envoyé ou signé, filtrable par client, formation et stagiaire."]
+    ["Ma journée en un coup d'œil","L'accueil montre ce qui est à faire aujourd'hui, la semaine qui vient, les mails à traiter et les contrôles.","captures/accueil.png"],
+    ["Toutes mes formations","Chaque formation avec ses raccourcis : campus des stagiaires, espace formateur, Google Classroom, suivi.","captures/formations.png"],
+    ["Promotions et calendriers","Les parcours longs et l'apprentissage : dates, rythme, heures en centre et en entreprise, stagiaires inscrits.","captures/promotions.png"],
+    ["Stagiaires en parcours longs","Une fiche par stagiaire : financeur, documents envoyés et signés, avancement du dossier.","captures/stagiaires.png"],
+    ["Devis et factures","On dépose l'accord de prise en charge ou le devis : la facture et les certificats se remplissent tout seuls.","captures/facture.png"],
+    ["Catalogue des programmes","Vos fiches programme, titres professionnels et heures en entreprise exigées, rangés au même endroit.","captures/programmes.png"],
+    ["Formateurs","Vos formateurs, leurs contrats à faire, et les sessions qui attendent encore un formateur ou une salle.","captures/formateurs.png"],
+    ["OPCO et financeurs","Les adresses et plateformes de facturation de chaque financeur, reprises sur les factures.","captures/opco.png"],
+    ["Espaces en ligne","Stagiaires, formateurs, partenaires, donneurs d'ordre et collaborateurs ont chacun leur espace : vous voyez qui s'est connecté.","captures/espaces.png"],
+    ["Qualiopi","Les indicateurs avec leurs preuves rangées au fil des sessions, et le compte à rebours avant l'audit.","captures/qualiopi.png"],
+    ["Pilotage et rentabilité","Recettes, dépenses et marge par activité, par formation ou par session, avec ce qui reste à facturer.","captures/analytique.png"]
   ],
   compta: [
-    ["Banque reliée","Vos opérations bancaires arrivent toutes seules (Qonto) et se classent en quelques clics."],
-    ["Rapprochement","Chaque paiement est relié à sa facture : vous voyez tout de suite ce qui reste à encaisser."],
-    ["Comptes clients et fournisseurs","Un compte par client et par fournisseur, pour suivre qui doit quoi."],
-    ["Dossier pour l'expert-comptable","Le bilan préparé, avec la liste des pièces qui manquent encore."]
+    ["Le tableau de bord","Banque, chiffre d'affaires, charges, résultat provisoire et impôt estimé, mis à jour tout seuls.","captures/cpt-accueil.png"],
+    ["Ma clôture pas à pas","Les étapes d'un expert-comptable dans l'ordre, avec l'état de chacune : vous savez toujours ce qu'il reste à faire.","captures/cpt-cloture.png"],
+    ["Le grand livre","Toutes les écritures compte par compte, avec export PDF et Excel pour l'expert-comptable.","captures/cpt-grandlivre.png"],
+    ["Bilan et compte de résultat","Présentés avec les repères des formulaires de la liasse fiscale, et le contrôle actif = passif.","captures/cpt-bilan.png"],
+    ["Le temps passé","Combien de temps vous prend la compta, et sur quoi : de quoi savoir ce qu'il faut simplifier.","captures/cpt-temps.png"]
   ],
   registre: [
-    ["Document unique (DUERP)","Les risques de chaque unité de travail, les actions et leur suivi, mis à jour chaque année."],
-    ["Vérifications VGP","Les engins et appareils de levage, leurs contrôles et les rapports au même endroit."],
-    ["EPI antichute","Chaque équipement suivi, avec sa date de vérification et son rapport."],
-    ["Alertes d'échéance","Un rappel avant chaque contrôle à refaire : plus rien n'est oublié."]
+    ["Ma journée de contrôleur","Les engins en retard, les vérifications à planifier, les contrôles à terminer et les DUERP à faire signer.","captures/reg-accueil.png"],
+    ["Contrôles EPI antichute","Un contrôle = un client et une date : salariés contrôlés, résultats, statut d'envoi, rapport global.","captures/reg-epi.png"],
+    ["Fiche de vérification","Chaque équipement : marque, n° de série, date de fabrication, état et observations détaillées.","captures/reg-fiche.png"],
+    ["Rapport avec photos","Les photos de chaque équipement contrôlé, avec son état, directement dans le rapport PDF.","captures/reg-photos.png"],
+    ["Le registre de chaque client","Identification, document unique, levage, EPI, incendie, formations, observations : tout le registre de sécurité au même endroit.","captures/reg-client.png"]
   ]
 };
-function shot(cap,img){if(img)return '<div class="shot"><img src="'+img+'" alt="'+cap+'" style="width:100%;display:block"></div>';
+function shot(cap,img){if(img)return '<div class="shot"><img src="'+img+'" alt="'+cap+'" loading="lazy" data-zoom="1" title="Cliquer pour agrandir" style="width:100%;display:block;cursor:zoom-in"></div>';
   return '<div class="shot" aria-hidden="true"><div class="bar"><i></i><i></i><i></i></div><div class="in"><div class="side"><span class="o"></span><span></span><span></span><span></span><span></span></div><div class="main"><div class="t"></div><div class="k"><span></span><span></span><span></span></div><div class="l"></div><div class="l o"></div><div class="l"></div><div class="l"></div></div></div><div class="cap">Capture à venir</div></div>'}
 Object.keys(ECRANS).forEach(function(k){var g=document.getElementById("g-"+k);if(!g)return;
   g.innerHTML=ECRANS[k].map(function(e){return '<div class="card feat">'+shot(e[0],e[2])+'<h3>'+e[0]+'</h3><p>'+e[1]+'</p></div>'}).join("")});
@@ -223,6 +229,11 @@ document.getElementById("f").addEventListener("submit",function(e){e.preventDefa
   ok.innerHTML="Votre messagerie s'ouvre avec la demande prête : il ne reste qu'à l'envoyer. Si rien ne s'ouvre, écrivez à <b>"+EMAIL_DEMANDES+"</b> ou appelez le <b>0692 09 85 92</b>.";
   location.href="mailto:"+EMAIL_DEMANDES+"?subject="+encodeURIComponent(sujet)+"&body="+encodeURIComponent(corps)});
 document.querySelectorAll("#f input,#f textarea").forEach(function(i){i.addEventListener("input",function(){document.getElementById("err").textContent=""})});
+/* ====== capture en grand ====== */
+var zb=document.createElement("div");zb.id="zoom";zb.style.cssText="display:none;position:fixed;inset:0;background:rgba(10,15,30,.88);z-index:50;align-items:center;justify-content:center;padding:16px;cursor:zoom-out";
+zb.innerHTML='<img alt="" style="max-width:100%;max-height:100%;border-radius:10px;box-shadow:0 10px 40px rgba(0,0,0,.4)">';document.body.appendChild(zb);
+zb.addEventListener("click",function(){zb.style.display="none"});document.addEventListener("keydown",function(e){if(e.key==="Escape")zb.style.display="none"});
+document.addEventListener("click",function(e){var t=e.target;if(t&&t.dataset&&t.dataset.zoom){zb.querySelector("img").src=t.src;zb.querySelector("img").alt=t.alt;zb.style.display="flex"}});
 </script>
 </body>
 </html>
