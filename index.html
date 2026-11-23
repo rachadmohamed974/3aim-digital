@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>3AIM DIGITAL · Outils de gestion pour TPE et PME à La Réunion</title>
+<meta name="description" content="3AIM DIGITAL, Saint-André (La Réunion) : CRM devis et facturation gratuit, gestion de centre de formation, comptabilité, registre de sécurité et sites internet pour les TPE et PME.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#12213F;--navy2:#1A3A6B;--or:#E87722;--or2:#F5A623;--ink:#1d2433;--mut:#5b6478;--line:#e6e9f0;--bg:#f6f7fb;--card:#fff;--ok:#15803D}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 18px}
+header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:62px;gap:12px}
+.logo{font-weight:600;font-size:19px;text-decoration:none;letter-spacing:.3px}.logo b{color:var(--or)}
+.menu{display:flex;gap:4px;flex-wrap:wrap}.menu a{text-decoration:none;font-size:14px;padding:7px 11px;border-radius:8px;color:var(--mut)}.menu a.on,.menu a:hover{background:#FFF1E6;color:#9A4A0B}
+.burger{display:none;background:none;border:1px solid var(--line);border-radius:8px;padding:6px 10px;font-size:18px;cursor:pointer}
+@media(max-width:760px){.burger{display:block}.menu{display:none;position:absolute;top:62px;left:0;right:0;background:#fff;flex-direction:column;padding:10px 18px;border-bottom:1px solid var(--line)}.menu.open{display:flex}}
+.btn{display:inline-block;background:var(--or);color:#fff;border:none;padding:11px 20px;border-radius:10px;font:inherit;font-weight:500;cursor:pointer;text-decoration:none}
+.btn:hover{background:#d2681a}.btn.line{background:transparent;color:#fff;border:1px solid #fff}.btn.line2{background:transparent;color:var(--navy);border:1px solid var(--navy)}
+.hero{background:var(--navy);color:#fff;border-radius:18px;padding:42px 28px;margin:26px 0}
+.hero .k{color:var(--or2);font-size:13px;font-weight:500;margin-bottom:8px}
+.hero h1{font-size:clamp(24px,4vw,38px);line-height:1.25;margin:0 0 12px;font-weight:600}
+.hero p{color:#D6DCE8;max-width:640px;margin:0 0 22px}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+h2{font-size:clamp(20px,3vw,28px);margin:34px 0 6px;font-weight:600}
+.sub{color:var(--mut);margin:0 0 18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;display:flex;flex-direction:column}
+.card h3{font-size:17px;margin:10px 0 4px;font-weight:600}.card p{color:var(--mut);font-size:14px;margin:0 0 10px;flex:1}
+.card a.more{font-size:14px;font-weight:500;color:var(--or);text-decoration:none}
+.pill{display:inline-block;font-size:12px;padding:3px 10px;border-radius:999px;background:#FFF1E6;color:#9A4A0B;font-weight:500}
+.ico{width:44px;height:44px;border-radius:12px;background:#EEF2FA;display:flex;align-items:center;justify-content:center;font-size:22px}
+/* faux écran (en attendant les vraies captures) */
+.shot{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff;margin-bottom:10px}
+.shot .bar{display:flex;gap:5px;padding:7px 9px;background:#F1F3F8;border-bottom:1px solid var(--line)}.shot .bar i{width:8px;height:8px;border-radius:50%;background:#cfd5e2;display:block}
+.shot .in{display:grid;grid-template-columns:28% 1fr;min-height:120px}
+.shot .side{background:var(--navy);padding:8px}.shot .side span{display:block;height:6px;border-radius:3px;background:rgba(255,255,255,.25);margin:6px 0}.shot .side span.o{background:var(--or)}
+.shot .main{padding:9px}.shot .main .t{height:8px;width:55%;background:#dfe4ee;border-radius:4px;margin-bottom:9px}
+.shot .main .k{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;margin-bottom:8px}.shot .main .k span{height:22px;border-radius:5px;background:#F4F6FB;border:1px solid #edf0f6}
+.shot .main .l{height:6px;border-radius:3px;background:#edf0f6;margin:5px 0}.shot .main .l.o{background:#FBD9BE;width:70%}
+.shot .cap{font-size:11px;color:var(--mut);text-align:center;padding:4px;border-top:1px dashed var(--line);background:#FBFBFD}
+.feat h3{font-size:15px}.feat p{font-size:13.5px}
+.video{border-radius:14px;background:var(--navy2);color:#fff;display:flex;align-items:center;justify-content:center;gap:10px;min-height:170px;font-size:14px;text-align:center;padding:18px}
+.video .play{width:52px;height:52px;border-radius:50%;background:var(--or);display:flex;align-items:center;justify-content:center;font-size:20px;flex:none}
+.price{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px}.price .v{font-size:28px;font-weight:600;margin:4px 0}.price .v.free{color:var(--ok)}.price ul{padding-left:18px;color:var(--mut);font-size:14px;margin:8px 0 0}
+.price.star{border:2px solid var(--or)}
+.steps{counter-reset:s}.step{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px}.step b{color:var(--or);font-size:22px}
+section{display:none;padding-bottom:30px;scroll-margin-top:80px}section.on{display:block}
+form .f{display:grid;gap:5px;margin-bottom:12px}form label{font-size:14px;font-weight:500}
+form input,form select,form textarea{font:inherit;padding:11px 12px;border:1px solid #cfd5e2;border-radius:10px;background:#fff}
+.err{color:#B42318;font-size:13px;min-height:18px}
+.ok-box{background:#E8F7EE;border:1px solid #bfe5cc;color:#14532D;border-radius:12px;padding:14px;font-size:14px;display:none}
+footer{background:var(--navy);color:#C9D2E3;font-size:13px;padding:26px 0;margin-top:30px}footer a{color:#fff}
+.note{font-size:12.5px;color:var(--mut)}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+  <a class="logo" href="#accueil"><b>3AIM</b> DIGITAL</a>
+  <button class="burger" type="button" aria-label="Ouvrir le menu" onclick="document.querySelector('.menu').classList.toggle('open')">☰</button>
+  <nav class="menu" aria-label="Menu">
+    <a href="#accueil">Accueil</a><a href="#formation">Centre de formation</a><a href="#compta">Comptabilité</a><a href="#registre">Registre de sécurité</a><a href="#sites">Sites internet</a><a href="#prix">Prix</a><a href="#contact">Contact</a>
+  </nav>
+</div></header>
+
+<main class="wrap">
+
+<!-- ========== ACCUEIL ========== -->
+<section id="accueil">
+  <div class="hero">
+    <div class="k">Fait à La Réunion · pour les TPE et PME</div>
+    <h1>Vos devis, factures, formations et sécurité réunis dans des outils simples</h1>
+    <p>Des outils que j'utilise tous les jours dans mes propres entreprises (centre de formation, contrôles de sécurité). Vous voyez les vrais écrans avant de choisir, et on part de votre façon de travailler.</p>
+    <div class="row"><a class="btn" href="#contact">Demander une démonstration</a><a class="btn line" href="#formation">Voir les outils</a></div>
+  </div>
+  <div class="grid">
+    <div class="card"><div class="ico">🎓</div><h3>Gestion de centre de formation</h3><p>Sessions, devis, factures, certificats, Qualiopi, traçabilité, espaces stagiaires, formateurs et collaborateurs.</p><span class="pill">Démo vidéo</span><a class="more" href="#formation" style="margin-top:10px">Voir les écrans →</a></div>
+    <div class="card"><div class="ico">🧮</div><h3>Comptabilité</h3><p>Banque reliée, rapprochement, comptes clients et fournisseurs, dossier pour l'expert-comptable.</p><span class="pill">Captures</span><a class="more" href="#compta" style="margin-top:10px">Voir les écrans →</a></div>
+    <div class="card"><div class="ico">🛡️</div><h3>Registre de sécurité</h3><p>DUERP, vérifications VGP et EPI, rapports, alertes d'échéance.</p><span class="pill">Captures</span><a class="more" href="#registre" style="margin-top:10px">Voir les écrans →</a></div>
+    <div class="card"><div class="ico">🌐</div><h3>Sites internet</h3><p>Site vitrine à votre image, relié à vos outils (demandes de devis, calendrier).</p><span class="pill">À partir de 990 €</span><a class="more" href="#sites" style="margin-top:10px">En savoir plus →</a></div>
+  </div>
+  <h2>Comment ça marche</h2><p class="sub">Simple, sans engagement de départ.</p>
+  <div class="grid steps">
+    <div class="step"><b>1</b><p>On parle de votre besoin et de votre façon de travailler.</p></div>
+    <div class="step"><b>2</b><p>Je prépare votre outil, avec vos documents et vos couleurs.</p></div>
+    <div class="step"><b>3</b><p>Vous testez sur vos vrais dossiers.</p></div>
+    <div class="step"><b>4</b><p>On ajoute des modules quand vous en avez besoin.</p></div>
+  </div>
+  <div class="row" style="margin-top:22px"><a class="btn" href="#contact">Demander une démonstration</a><a class="btn line2" href="#prix">Voir les prix</a></div>
+</section>
+
+<!-- ========== CENTRE DE FORMATION ========== -->
+<section id="formation">
+  <h2>Gestion de centre de formation</h2>
+  <p class="sub">Tout le parcours, de la demande de devis au certificat de réalisation, avec les preuves Qualiopi rangées au fil de l'eau.</p>
+  <div class="video"><div class="play">▶</div><div><b>Vidéo de démonstration</b><br>Créer une session, faire le devis et la facture en quelques clics (bientôt en ligne)</div></div>
+  <h2 style="font-size:20px">Les écrans</h2>
+  <div class="grid" id="g-formation"></div>
+  <div class="row" style="margin-top:22px"><a class="btn" href="#contact">Voir l'outil en démonstration</a></div>
+</section>
+
+<!-- ========== COMPTA ========== -->
+<section id="compta">
+  <h2>Comptabilité</h2>
+  <p class="sub">Une comptabilité tenue au fil de l'eau, reliée à votre banque, pour ne plus tout faire à la dernière minute.</p>
+  <div class="grid" id="g-compta"></div>
+  <div class="row" style="margin-top:22px"><a class="btn" href="#contact">Demander une démonstration</a></div>
+</section>
+
+<!-- ========== REGISTRE ========== -->
+<section id="registre">
+  <h2>Registre de sécurité</h2>
+  <p class="sub">Vos obligations de sécurité au même endroit : document unique, vérifications périodiques, rapports et rappels.</p>
+  <div class="grid" id="g-registre"></div>
+  <div class="row" style="margin-top:22px"><a class="btn" href="#contact">Demander une démonstration</a></div>
+</section>
+
+<!-- ========== SITES ========== -->
+<section id="sites">
+  <h2>Sites internet</h2>
+  <p class="sub">Un site vitrine clair, rapide et à votre image, qui travaille avec vos outils.</p>
+  <div class="grid">
+    <div class="card feat"><div class="ico">📱</div><h3>Lisible sur téléphone</h3><p>Pensé d'abord pour le téléphone, où vos clients vous cherchent.</p></div>
+    <div class="card feat"><div class="ico">📨</div><h3>Demandes de devis</h3><p>Le formulaire de votre site arrive directement dans vos outils ou vos mails.</p></div>
+    <div class="card feat"><div class="ico">📅</div><h3>Calendrier en ligne</h3><p>Vos prochaines dates (formations, rendez-vous) affichées toutes seules.</p></div>
+    <div class="card feat"><div class="ico">🔒</div><h3>Votre nom de domaine</h3><p>Une adresse à votre nom (votreentreprise.fr), avec sécurité HTTPS.</p></div>
+  </div>
+  <div class="price star" style="margin-top:16px;max-width:420px"><div class="note">Site vitrine</div><div class="v">à partir de 990 €</div><ul><li>Pages à votre image</li><li>Formulaire de contact</li><li>Mise en ligne sur votre adresse</li></ul></div>
+  <div class="row" style="margin-top:22px"><a class="btn" href="#contact">Demander un devis</a></div>
+</section>
+
+<!-- ========== PRIX ========== -->
+<section id="prix">
+  <h2>Les prix</h2><p class="sub">Vous commencez gratuitement, et vous ajoutez seulement ce qui vous sert.</p>
+  <div class="grid">
+    <div class="price star"><div class="note">CRM devis et facturation</div><div class="v free">Gratuit</div><ul><li>Fiches clients</li><li>Devis et factures</li><li>Envoi par mail</li></ul></div>
+    <div class="price"><div class="note">Modules en plus</div><div class="v">dès 49 € / mois</div><ul><li>ou 500 € en une fois</li><li>Comptabilité, planning, centre de formation, registre de sécurité…</li></ul><p class="note" style="margin:10px 0 0">Prix indicatifs, confirmés sur devis.</p></div>
+    <div class="price"><div class="note">Site internet</div><div class="v">dès 990 €</div><ul><li>Site vitrine à votre image</li><li>Relié à vos outils</li></ul></div>
+  </div>
+  <div class="row" style="margin-top:22px"><a class="btn" href="#contact">Demander une démonstration</a></div>
+</section>
+
+<!-- ========== CONTACT ========== -->
+<section id="contact">
+  <h2>Demander une démonstration</h2>
+  <p class="sub">Dites-moi ce qui vous intéresse : je vous rappelle pour une démonstration sur vos propres exemples.</p>
+  <div class="grid" style="align-items:start">
+    <form id="f" class="card" novalidate>
+      <div class="f"><label for="nom">Nom et prénom</label><input id="nom" autocomplete="name" placeholder="Marie Payet"></div>
+      <div class="f"><label for="ent">Entreprise</label><input id="ent" autocomplete="organization" placeholder="SARL Exemple"></div>
+      <div class="f"><label for="tel">Téléphone</label><input id="tel" type="tel" autocomplete="tel" placeholder="0692 00 00 00"></div>
+      <div class="f"><label for="mail">E-mail</label><input id="mail" type="email" autocomplete="email" placeholder="marie@exemple.re"></div>
+      <div class="f"><label for="quoi">Ce qui vous intéresse</label><select id="quoi"><option>CRM devis et facturation (gratuit)</option><option>Gestion de centre de formation</option><option>Comptabilité</option><option>Registre de sécurité</option><option>Site internet</option><option>Autre / je ne sais pas encore</option></select></div>
+      <div class="f"><label for="msg">Votre message</label><textarea id="msg" rows="4" placeholder="Votre activité, votre besoin…"></textarea></div>
+      <div class="err" id="err" role="alert"></div>
+      <button class="btn" type="submit">Envoyer ma demande</button>
+      <div class="ok-box" id="okb" style="margin-top:12px"></div>
+    </form>
+    <div class="card"><h3>Me joindre directement</h3><p>📞 <a href="tel:+262692098592">0692 09 85 92</a><br>✉️ <a id="mailto-txt" href="mailto:contact@3aim.fr">contact@3aim.fr</a><br>📍 Saint-André, La Réunion</p><p class="note">3AIM DIGITAL est une activité de 3AIM, Saint-André.</p></div>
+  </div>
+</section>
+
+</main>
+<footer><div class="wrap row" style="justify-content:space-between"><span><b style="color:var(--or)">3AIM</b> DIGITAL · Saint-André, La Réunion</span><span><a href="#contact">Contact</a> · 0692 09 85 92</span></div></footer>
+
+<script>
+/* ====== RÉGLAGES (à changer ici seulement) ====== */
+var EMAIL_DEMANDES = "contact@3aim.fr"; // plus tard : digital@3aim.fr
+
+/* ====== écrans montrés (remplacer « img » par le nom de la capture quand elle est prête, ex. "captures/formation-gestion.png") ====== */
+var ECRANS = {
+  formation: [
+    ["Gestion des sessions","Toutes vos sessions, inter-entreprises comprises : stagiaires, formateur, devis, facture et certificats sur une seule fiche."],
+    ["Devis et factures","Le devis se fait depuis la session, la facture reprend l'accord de l'OPCO, le reste à charge part à l'entreprise."],
+    ["Espace en ligne stagiaires","Chaque stagiaire signe ses émargements, répond aux questionnaires et retrouve ses documents."],
+    ["Espace formateur","Le formateur voit son planning et ses contrats, dépose ses supports : son journal se remplit tout seul."],
+    ["Espace collaborateur","Vos collaborateurs travaillent sur les dossiers qui les concernent, avec leurs propres accès."],
+    ["Gestion des espaces","Ouvrir un accès, voir qui s'est connecté, mettre un espace en maintenance : tout depuis une page."],
+    ["Qualiopi","Les 32 indicateurs, avec les preuves rangées automatiquement au fil des sessions. Prêt pour l'audit."],
+    ["Traçabilité","Tout ce qui a été émis, envoyé ou signé, filtrable par client, formation et stagiaire."]
+  ],
+  compta: [
+    ["Banque reliée","Vos opérations bancaires arrivent toutes seules (Qonto) et se classent en quelques clics."],
+    ["Rapprochement","Chaque paiement est relié à sa facture : vous voyez tout de suite ce qui reste à encaisser."],
+    ["Comptes clients et fournisseurs","Un compte par client et par fournisseur, pour suivre qui doit quoi."],
+    ["Dossier pour l'expert-comptable","Le bilan préparé, avec la liste des pièces qui manquent encore."]
+  ],
+  registre: [
+    ["Document unique (DUERP)","Les risques de chaque unité de travail, les actions et leur suivi, mis à jour chaque année."],
+    ["Vérifications VGP","Les engins et appareils de levage, leurs contrôles et les rapports au même endroit."],
+    ["EPI antichute","Chaque équipement suivi, avec sa date de vérification et son rapport."],
+    ["Alertes d'échéance","Un rappel avant chaque contrôle à refaire : plus rien n'est oublié."]
+  ]
+};
+function shot(cap,img){if(img)return '<div class="shot"><img src="'+img+'" alt="'+cap+'" style="width:100%;display:block"></div>';
+  return '<div class="shot" aria-hidden="true"><div class="bar"><i></i><i></i><i></i></div><div class="in"><div class="side"><span class="o"></span><span></span><span></span><span></span><span></span></div><div class="main"><div class="t"></div><div class="k"><span></span><span></span><span></span></div><div class="l"></div><div class="l o"></div><div class="l"></div><div class="l"></div></div></div><div class="cap">Capture à venir</div></div>'}
+Object.keys(ECRANS).forEach(function(k){var g=document.getElementById("g-"+k);if(!g)return;
+  g.innerHTML=ECRANS[k].map(function(e){return '<div class="card feat">'+shot(e[0],e[2])+'<h3>'+e[0]+'</h3><p>'+e[1]+'</p></div>'}).join("")});
+
+/* ====== pages (navigation par #) ====== */
+var PAGES=["accueil","formation","compta","registre","sites","prix","contact"];
+function go(){var h=(location.hash||"#accueil").slice(1);if(PAGES.indexOf(h)<0)h="accueil";
+  PAGES.forEach(function(p){document.getElementById(p).classList.toggle("on",p===h)});
+  document.querySelectorAll(".menu a").forEach(function(a){a.classList.toggle("on",a.getAttribute("href")==="#"+h)});
+  document.querySelector(".menu").classList.remove("open");window.scrollTo(0,0);setTimeout(function(){window.scrollTo(0,0)},0)}
+window.addEventListener("hashchange",go);go();
+
+/* ====== demande de démonstration : prépare le mail ====== */
+document.getElementById("mailto-txt").textContent=EMAIL_DEMANDES;document.getElementById("mailto-txt").href="mailto:"+EMAIL_DEMANDES;
+document.getElementById("f").addEventListener("submit",function(e){e.preventDefault();
+  var v=function(id){return document.getElementById(id).value.trim()},err=document.getElementById("err");
+  if(!v("nom")){err.textContent="Indiquez votre nom.";return}
+  if(!v("tel")&&!v("mail")){err.textContent="Indiquez un téléphone ou un e-mail pour que je puisse vous recontacter.";return}
+  if(v("mail")&&!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v("mail"))){err.textContent="L'adresse e-mail ne semble pas complète.";return}
+  err.textContent="";
+  var sujet="Demande de démonstration 3AIM DIGITAL – "+v("quoi")+(v("ent")?" – "+v("ent"):"");
+  var corps="Nom : "+v("nom")+"\nEntreprise : "+v("ent")+"\nTéléphone : "+v("tel")+"\nE-mail : "+v("mail")+"\nIntéressé par : "+v("quoi")+"\n\n"+v("msg");
+  var ok=document.getElementById("okb");ok.style.display="block";
+  ok.innerHTML="Votre messagerie s'ouvre avec la demande prête : il ne reste qu'à l'envoyer. Si rien ne s'ouvre, écrivez à <b>"+EMAIL_DEMANDES+"</b> ou appelez le <b>0692 09 85 92</b>.";
+  location.href="mailto:"+EMAIL_DEMANDES+"?subject="+encodeURIComponent(sujet)+"&body="+encodeURIComponent(corps)});
+document.querySelectorAll("#f input,#f textarea").forEach(function(i){i.addEventListener("input",function(){document.getElementById("err").textContent=""})});
+</script>
+</body>
+</html>
