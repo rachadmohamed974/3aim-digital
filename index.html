@@ -153,7 +153,7 @@ body{padding-top:29px}header{top:29px!important}@media print{#tool-band{display:
   <div class="how">
     <a class="step card" href="#crm-devis" style="text-decoration:none;color:inherit"><b>1</b><div><h3>Le pack de base</h3><p>3AIM Soft Vente est ouvert d'office : clients, devis, factures et contrats récurrents.</p></div></a>
     <a class="step card" href="#crm" style="text-decoration:none;color:inherit"><b>2</b><div><h3>Vous ajoutez des modules</h3><p>Planning, espace clients, comptabilité, paie, centre de formation : chacun s'ajoute dans le même menu.</p></div></a>
-    <a class="step card" href="#prix" style="text-decoration:none;color:inherit"><b>3</b><div><h3>Vous payez ce que vous utilisez</h3><p>Un abonnement mensuel par prélèvement automatique, et une mise en route avec formation sur place.</p></div></a>
+    <a class="step card" href="#prix" style="text-decoration:none;color:inherit"><b>3</b><div><h3>Vous payez ce que vous utilisez</h3><p>Un abonnement mensuel par prélèvement automatique, dès 9 € par mois, sans frais de mise en route.</p></div></a>
   </div>
   <div class="temoins" id="temoins"><h2>Ils nous font confiance</h2><p class="sub">Les avis de nos clients.</p><div class="grid" id="g-temoins"></div></div>
   <div class="row" style="margin-top:22px"><a class="btn" href="#contact">Demander une démonstration</a><a class="btn line2" href="#prix">Voir les prix</a></div>
@@ -271,12 +271,11 @@ body{padding-top:29px}header{top:29px!important}@media print{#tool-band{display:
 
 <!-- ========== PRIX ========== -->
 <section id="prix">
-  <h2>Les prix</h2><p class="sub">Vous commencez avec le pack de base, et vous ajoutez seulement les modules qui vous servent. Prix hors taxes.</p>
+  <h2>Les prix</h2><p class="sub">3AIM Digital Soft, pour toutes les entreprises : en Solo, vous commencez à 9 € et vous ajoutez seulement les modules qui vous servent. En Équipe, tout est compris. Prix hors taxes.</p>
   <div class="grid">
-    <div class="price star"><div class="note">CRM · pack de base 3AIM Soft Vente</div><div class="v" id="px-base"></div><ul><li>Fiches clients</li><li>Adresse d'intervention sur les devis et factures</li><li>Numérotation réglable, remise à 001 chaque année</li><li>Devis, factures et contrats récurrents</li><li>Remplissage par le SIRET</li><li>Envoi par mail</li></ul></div>
-    <div class="price"><div class="note">Modules en plus</div><div class="v" id="px-mods"></div><ul><li>Planning et pointage (avec vos sites), espace entreprise partenaire, comptabilité, préparation de paie…</li><li>Chaque module s'ajoute dans le même menu</li></ul></div>
-    <div class="price"><div class="note">Pack complet</div><div class="v" id="px-complet"></div><ul><li>Le pack de base et tous les modules de gestion</li><li>Moins cher que les modules pris un par un</li></ul></div>
-    <div class="price"><div class="note">Mise en route</div><div class="v" id="px-miseenroute"></div><ul><li>Installation de votre compte</li><li>Reprise de vos clients</li><li>Formation sur place, à La Réunion</li></ul></div>
+    <div class="price star"><div class="note">Offre Solo · 1 utilisateur · 3AIM Soft Vente</div><div class="v" id="px-base"></div><ul><li>Fiches clients</li><li>Adresse d'intervention sur les devis et factures</li><li>Numérotation réglable, remise à 001 chaque année</li><li>Devis, factures et contrats récurrents</li><li>Remplissage par le SIRET</li><li>Envoi par mail</li></ul></div>
+    <div class="price"><div class="note">Modules en plus · offre Solo</div><div class="v" id="px-mods"></div><ul><li>Planning et pointage (avec vos sites), espace entreprise partenaire, comptabilité, préparation de paie…</li><li>Chaque module s'ajoute dans le même menu</li><li>Tous les modules en Solo : <b id="px-solo-tout"></b> par mois</li></ul></div>
+    <div class="price star"><div class="note">Offre Équipe « tout compris » · jusqu'à 5 utilisateurs</div><div class="v" id="px-complet"></div><ul><li>3AIM Soft Vente et tous les modules de gestion inclus</li><li>Jusqu'à 5 utilisateurs</li><li>La meilleure offre dès que vous êtes plusieurs ou que vous prenez plusieurs modules</li></ul></div>
   </div>
   <h2>Le tableau des offres</h2><p class="sub">Cliquez sur une ligne pour voir le module.</p>
   <div class="syn-wrap"><table class="syn" id="syn"></table></div>
@@ -341,7 +340,7 @@ body{padding-top:29px}header{top:29px!important}@media print{#tool-band{display:
 /* ====== RÉGLAGES (à changer ici seulement) ====== */
 var EMAIL_DEMANDES = "contact@3aim.fr"; // plus tard : digital@3aim.fr
 /* version du site : à changer à chaque nouvelle version livrée */
-var VERSION = "v1.7";
+var VERSION = "v1.8";
 var MAJ = "26/11/2026";
 /* société qui vend (mentions légales) : à changer ici si 3AIM DIGITAL devient une société */
 var SOCIETE = { nom: "3 AIM", forme: "SAS à associé unique", rcs: "RCS Saint-Denis de La Réunion 934 184 177", siege: "109 Lotissement Les Lilas, 97440 Saint-André, La Réunion", directeur: "Rachad MOHAMED" };
@@ -377,7 +376,7 @@ var ECRANS = {
   ]
 };
 /* ====== PRIX (HT, à changer ici seulement) ====== */
-var PRIX = { base: 29, complet: 89, miseEnRoute: 300,
+var PRIX = { base: 9, complet: 89, miseEnRoute: 300, /* miseEnRoute : seulement pour le centre de formation (Lakaz Pro) */
   cf: [ ["Solo", 49, "1 utilisateur : tout le parcours, de la demande au paiement, le tableau de pilotage et le bouton Qualiopi"], ["Équipe « tout compris »", 99, "Jusqu'à 5 utilisateurs, avec le Pack Outils, le Pack Parcours longs (dont le livret numérique) et l'assistant Marcel inclus"] ],
   /* options de l'offre Solo (incluses dans l'offre Équipe) : nom, prix, contenu */
   cfOpt: [ ["Pack Outils", 5, "Envoi des factures à une plateforme de facturation électronique, lien registre de sécurité / DUERP, compteur de temps"], ["Pack Parcours longs", 15, "Sous-traitance, mutualisation et ✨ livret numérique du stagiaire"], ["Assistant Marcel", 15, "Un assistant qui répond à vos questions sur l'outil et vous aide à le remplir (200 questions par mois)"] ] };
@@ -386,8 +385,8 @@ var PRIX = { base: 29, complet: 89, miseEnRoute: 300,
 var TEMOIGNAGES = [];
 /* ====== modules du CRM ====== */
 var MODULES = [
-  ["🧾","3AIM Soft Vente","Devis, factures, avoirs et contrats récurrents, adresse d'intervention sur chaque document, numérotation qui repart à 001 chaque 1er janvier. Ouvert d'office.","base","#crm-devis","img:accueil",29,"CRM devis et facturation",1],
-  ["📅","Planning et pointage","Vos sites d'intervention, interventions planifiées, page téléphone pour les agents, QR code par site et relevé d'heures.","opt","#crm-planning","img:planning",19,"Planning et pointage",1],
+  ["🧾","3AIM Soft Vente","Devis, factures, avoirs et contrats récurrents, adresse d'intervention sur chaque document, numérotation qui repart à 001 chaque 1er janvier. Ouvert d'office.","base","#crm-devis","img:accueil",9,"CRM devis et facturation",1],
+  ["📅","Planning et pointage","Vos sites d'intervention, interventions planifiées, page téléphone pour les agents, QR code par site et relevé d'heures.","opt","#crm-planning","img:planning",9,"Planning et pointage",1],
   ["🤝","Espace entreprise partenaire","Vos clients consultent en ligne leurs devis, factures et documents, et acceptent un devis d'un clic.","opt","#crm-espace","img:espace",15,"Espace entreprise partenaire",1],
   ["🧮","Comptabilité","Prête dès l'ouverture, reprise du dernier bilan, banque connectée, opérations classées toutes seules, TVA, bilan et dossier pour l'expert-comptable.","opt","#compta","captures/cpt-accueil.png",25,"Comptabilité",1],
   ["💶","Préparation de paie","Heures et éléments variables de vos salariés, prêts à envoyer à l'expert-comptable ou au logiciel de paie.","opt","#crm-paie","img:paie",19,"Préparation de paie",1],
@@ -409,21 +408,22 @@ document.addEventListener("keydown",function(e){if(e.key==="Enter"&&e.target.dat
 /* prix */
 (function(){var e=function(i,h){var x=document.getElementById(i);if(x)x.innerHTML=h};
   var opts=MODULES.filter(function(m){return m[3]==="opt"&&m[6]!=="cf"}).map(function(m){return m[6]});
-  e("px-base",PRIX.base+" € <small style='font-size:14px;font-weight:400'>HT / mois</small>");
+  e("px-base","dès "+PRIX.base+" € <small style='font-size:14px;font-weight:400'>HT / mois</small>");
   e("px-mods",Math.min.apply(null,opts)+" à "+Math.max.apply(null,opts)+" € <small style='font-size:14px;font-weight:400'>HT / mois</small>");
   e("px-complet",PRIX.complet+" € <small style='font-size:14px;font-weight:400'>HT / mois</small>");
-  e("px-miseenroute",PRIX.miseEnRoute+" € <small style='font-size:14px;font-weight:400'>HT, une fois</small>");
+  e("px-solo-tout",MODULES.reduce(function(s,m){return m[6]==="cf"?s:s+m[6]},0)+" € HT");
   /* tableau des offres */
-  var t='<thead><tr><th>Module</th><th>Pack de base<span class="v">'+PRIX.base+' €</span></th><th>À la carte<span class="v">'+PRIX.base+' € + modules</span></th><th class="star">Pack complet<span class="v">'+PRIX.complet+' €</span></th></tr></thead><tbody>';
+  var t='<thead><tr><th>Module</th><th>Solo · 1 utilisateur<span class="v">'+PRIX.base+' €</span></th><th>Solo à la carte<span class="v">'+PRIX.base+' € + modules</span></th><th class="star">Équipe · jusqu\'à 5 utilisateurs<span class="v">'+PRIX.complet+' € tout compris</span></th></tr></thead><tbody>';
   MODULES.forEach(function(m){if(m[6]==="cf")return;
     t+='<tr data-go="'+m[4]+'" title="Voir le module '+m[1]+'"><td>'+m[0]+' '+m[1]+'</td><td class="'+(m[3]==="base"?'y">✓':'n">—')+'</td><td class="y">'+(m[3]==="base"?"✓":"+ "+m[6]+" €")+'</td><td class="'+(m[8]?'y">✓':'n">—')+'</td></tr>'});
   var cf=MODULES.filter(function(m){return m[6]==="cf"})[0];
-  if(cf)t+='<tr data-go="'+cf[4]+'" title="Voir le module '+cf[1]+'"><td>'+cf[0]+' '+cf[1]+'</td><td class="n">—</td><td class="y">dès '+PRIX.cf[0][1]+' €</td><td class="y">+ dès '+PRIX.cf[0][1]+' €</td></tr>';
-  t+='</tbody><tfoot><tr><td colspan="4">Prix HT par mois · mise en route avec formation sur place : '+PRIX.miseEnRoute+' € HT une fois · paiement par prélèvement automatique</td></tr></tfoot>';
+  if(cf)t+='<tr data-go="'+cf[4]+'" title="Voir le module '+cf[1]+'"><td>'+cf[0]+' '+cf[1]+'</td><td colspan="3" class="y">Offre à part (Lakaz Pro) : dès '+PRIX.cf[0][1]+' € · voir « Centre de formation » ci-dessous</td></tr>';
+  t+='</tbody><tfoot><tr><td colspan="4">Prix HT par mois · sans frais de mise en route · paiement par prélèvement automatique</td></tr></tfoot>';
   e("syn",t);
   /* formules centre de formation */
   e("g-cf-prix",PRIX.cf.map(function(f,i){return '<div class="price'+(i===0?' star':'')+'"><div class="note">Centre de formation · '+f[0]+'</div><div class="v">'+f[1]+' € <small style="font-size:14px;font-weight:400">HT / mois</small></div><ul><li>'+f[2]+'</li></ul></div>'}).join("")
-    +PRIX.cfOpt.map(function(f){return '<div class="price"><div class="note">Option de l\'offre Solo · incluse dans l\'offre Équipe</div><div class="v">+ '+f[1]+' € <small style="font-size:14px;font-weight:400">HT / mois</small></div><ul><li><b>'+f[0]+'</b> : '+f[2]+'</li></ul></div>'}).join(""));
+    +PRIX.cfOpt.map(function(f){return '<div class="price"><div class="note">Option de l\'offre Solo · incluse dans l\'offre Équipe</div><div class="v">+ '+f[1]+' € <small style="font-size:14px;font-weight:400">HT / mois</small></div><ul><li><b>'+f[0]+'</b> : '+f[2]+'</li></ul></div>'}).join("")
+    +'<div class="price"><div class="note">Centre de formation · mise en route</div><div class="v">'+PRIX.miseEnRoute+' € <small style="font-size:14px;font-weight:400">HT, une fois</small></div><ul><li>Installation de votre compte</li><li>Reprise de vos données</li><li>Formation sur place, à La Réunion</li></ul></div>');
   /* témoignages */
   if(TEMOIGNAGES.length){document.getElementById("temoins").classList.add("on");
     e("g-temoins",TEMOIGNAGES.map(function(q){return '<div class="quote"><p>« '+q[0]+' »</p><span>'+q[1]+'</span></div>'}).join(""))}
