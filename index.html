@@ -129,6 +129,7 @@ table.syn tfoot td{background:#FAFAFC;font-size:13.5px;color:var(--mut)}
     <div class="card"><div class="ico">🎓</div><h3>Gestion de centre de formation</h3><p>Sessions, devis, factures, certificats, Qualiopi, traçabilité, espaces stagiaires, formateurs et collaborateurs.</p><span class="pill">Captures</span><a class="more" href="#formation" style="margin-top:10px">Voir les écrans →</a></div>
     <div class="card"><div class="ico">🧮</div><h3>Comptabilité</h3><p>Banque reliée, rapprochement, comptes clients et fournisseurs, dossier pour l'expert-comptable.</p><span class="pill">Captures</span><a class="more" href="#compta" style="margin-top:10px">Voir les écrans →</a></div>
     <div class="card"><div class="ico">🛡️</div><h3>Registre de sécurité</h3><p>DUERP, vérifications VGP et EPI, rapports, alertes d'échéance.</p><span class="pill">Captures</span><a class="more" href="#registre" style="margin-top:10px">Voir les écrans →</a></div>
+    <div class="card"><div class="ico">🚀</div><h3>Créer votre entreprise</h3><p>Vous créez votre entreprise ? Profitez de 3 heures de diagnostic offertes : on vous conseille et on vous oriente de l'idée jusqu'à l'immatriculation (business plan, choix de la forme juridique, aides), puis on vous équipe pour gérer dès le premier jour.</p><span class="pill">3 h de diagnostic offertes</span><a class="more" href="#contact" data-quoi="Création d'entreprise (diagnostic offert)" data-msg="Je souhaite prendre rendez-vous pour le diagnostic création d'entreprise." style="margin-top:10px">Prendre rendez-vous →</a></div>
     <div class="card"><div class="ico">🌐</div><h3>Sites internet</h3><p>Site vitrine à votre image, relié à vos outils (demandes de devis, calendrier).</p><span class="pill">À partir de 990 €</span><a class="more" href="#sites" style="margin-top:10px">En savoir plus →</a></div>
   </div>
   <h2>Comment ça marche</h2><p class="sub">Vous ne payez que ce qui vous sert, et vous ajoutez des modules quand vous en avez besoin.</p>
@@ -269,7 +270,7 @@ table.syn tfoot td{background:#FAFAFC;font-size:13.5px;color:var(--mut)}
       <div class="f"><label for="ent">Entreprise</label><input id="ent" autocomplete="organization" placeholder="SARL Exemple"></div>
       <div class="f"><label for="tel">Téléphone</label><input id="tel" type="tel" autocomplete="tel" placeholder="0692 00 00 00"></div>
       <div class="f"><label for="mail">E-mail</label><input id="mail" type="email" autocomplete="email" placeholder="marie@exemple.re"></div>
-      <div class="f"><label for="quoi">Ce qui vous intéresse</label><select id="quoi"><option>CRM devis et facturation</option><option>3AIM Soft Vente</option><option>Ouverture d'un module du CRM</option><option>Planning et pointage</option><option>Espace entreprise partenaire</option><option>Préparation de paie</option><option>Centre de formation</option><option>Comptabilité</option><option>Registre de sécurité</option><option>Site internet</option><option>Autre / je ne sais pas encore</option></select></div>
+      <div class="f"><label for="quoi">Ce qui vous intéresse</label><select id="quoi"><option>CRM devis et facturation</option><option>3AIM Soft Vente</option><option>Ouverture d'un module du CRM</option><option>Planning et pointage</option><option>Espace entreprise partenaire</option><option>Préparation de paie</option><option>Centre de formation</option><option>Comptabilité</option><option>Registre de sécurité</option><option>Site internet</option><option>Création d'entreprise (diagnostic offert)</option><option>Autre / je ne sais pas encore</option></select></div>
       <div class="f"><label for="msg">Votre message</label><textarea id="msg" rows="4" placeholder="Votre activité, votre besoin…"></textarea></div>
       <div class="err" id="err" role="alert"></div>
       <button class="btn" type="submit">Envoyer ma demande</button>
@@ -287,7 +288,7 @@ table.syn tfoot td{background:#FAFAFC;font-size:13.5px;color:var(--mut)}
 /* ====== RÉGLAGES (à changer ici seulement) ====== */
 var EMAIL_DEMANDES = "contact@3aim.fr"; // plus tard : digital@3aim.fr
 /* version du site : à changer à chaque nouvelle version livrée */
-var VERSION = "v1.5";
+var VERSION = "v1.6";
 var MAJ = "26/11/2026";
 /* société qui vend (mentions légales) : à changer ici si 3AIM DIGITAL devient une société */
 var SOCIETE = { nom: "3 AIM", forme: "SAS à associé unique", rcs: "RCS Saint-Denis de La Réunion 934 184 177", siege: "109 Lotissement Les Lilas, 97440 Saint-André, La Réunion", directeur: "Rachad MOHAMED" };
